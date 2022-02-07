@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Create Contact</title>
+    <title>Update Contact</title>
     <link
       rel="stylesheet"
       href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -11,8 +11,8 @@
   </head>
   <body>
     <div class="outer-div">
-      <h1 class="header">Contact Details</h1>
-      <form action="/create-contact" method="post">
+      <h2 class="header">Update Contact Details</h2>
+      <form action="/update-contact/?id=<%=id%>" method="post">
         <label class="label-field" for="name">Name</label><br />
         <input
           class="input-field"
@@ -38,7 +38,7 @@
           required
         /><br />
         <div class="button-div">
-          <button type="submit" class="submit-button">Add Contact</button>
+          <button type="submit" class="submit-button">Update Contact</button>
         </div>
       </form>
     </div>

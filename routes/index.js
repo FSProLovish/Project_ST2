@@ -6,6 +6,7 @@ const contactController = require("../controllers/contact_controller");
 
 router.get("/", homeController.home);
 router.get("/add-contact", homeController.addContact);
+router.get("/update", homeController.updateContact);
 router.get("/contact-list", contactController.list);
 router.post("/create-contact", contactController.create);
 router.get("/delete-contact", contactController.delete);

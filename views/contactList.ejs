@@ -7,36 +7,38 @@
       integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/contactlist.css" />
   </head>
   <body>
-    <h1>
+    <h1 class="header">
       <i class="fas fa-address-book"></i>
-      My Contacts List
+      My Contact List
     </h1>
-    <div>
-      <ul>
-        <% for(let i of contact_list) {%>
-        <div>
-          <li>
-            <div>
-              <p><%=i.name%></p>
-              <p><%=i.phone%></p>
-              <p><%=i.email%></p>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Contact</th>
+        <th>Email</th>
+        <th>Delete</th>
+        <th>Update</th>
+      </tr>
+      <% for(let i of contact_list) {%>
+      <tr>
+        <td><%=i.name%></td>
+        <td><%=i.phone%></td>
+        <td><%=i.email%></td>
 
-              <div>
-                <a href="/delete-contact/?id=<%=i._id%>">
-                  <i class="fas fa-window-close"></i>
-                </a>
-              </div>
-              <div>
-                <a href="/update-contact/?id=<%=i._id%>"> Update </a>
-              </div>
-            </div>
-          </li>
-        </div>
-        <%}%>
-      </ul>
-    </div>
+        <td>
+          <a href="/delete-contact/?id=<%=i._id%>">
+            <i class="fas fa-window-close"></i>
+          </a>
+        </td>
+        <td>
+          <a href="/update/?id=<%=i._id%>"> Update </a>
+        </td>
+      </tr>
+      <%}%>
+    </table>
+    <div></div>
   </body>
 </html>

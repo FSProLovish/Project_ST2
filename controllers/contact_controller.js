@@ -46,7 +46,7 @@ module.exports.delete = function (req, res) {
 
 // To Update a Contact in DataBase
 module.exports.update = function (req, res) {
-  let id = req.body.id;
+  let id = req.query.id;
   Contact.findByIdAndUpdate(
     id,
     {

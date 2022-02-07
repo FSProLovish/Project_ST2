@@ -1,0 +1,15 @@
+body {
+  background-image: url("https://st2.depositphotos.com/1265075/5420/i/600/depositphotos_54203315-stock-photo-web-contact-us-icons-cube.jpg");
+  background-size: cover;
+}
+
+i {
+  font-size: 25px;
+}
+
+.contact-list {
+  margin: 5px;
+  font-size: 25px;
+  text-transform: uppercase;
+  color: coral;
+}
