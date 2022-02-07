@@ -33,7 +33,7 @@ module.exports.create = function (req, res) {
             console.log("Error in creating a contact");
             return;
           }
-          res.redirect("/contact-list");
+          return res.redirect("/contact-list");
         }
       );
     } else {
@@ -56,19 +56,30 @@ module.exports.delete = function (req, res) {
 
 // To Update a Contact in DataBase
 module.exports.update = function (req, res) {
-  let id = req.query.id;
-  Contact.findByIdAndUpdate(
-    id,
-    {
-      name: req.body.name,
-      phone: req.body.phone,
-      email: req.body.email,
-    },
-    function (err) {
-      if (err) {
-        console.log("Error in updating the contact in Database!");
-      }
-      res.redirect("/contact-list");
+  Contact.findOne({ email: req.body.email }, function (err, contact) {
+    if (err) {
+      console.log("error in finding the contact");
+      return;
     }
-  );
+    if (!contact) {
+      let id = req.query.id;
+      Contact.findByIdAndUpdate(
+        id,
+        {
+          name: req.body.name,
+          phone: req.body.phone,
+          email: req.body.email,
+        },
+        function (err) {
+          if (err) {
+            console.log("Error in updating the contact in Database!");
+            return;
+          }
+          return res.redirect("/contact-list");
+        }
+      );
+    } else {
+      return res.redirect("back");
+    }
+  });
 };
