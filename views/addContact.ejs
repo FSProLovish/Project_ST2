@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <title>Create Contact</title>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="outer-div">
+      <h1 class="header">Contact Details</h1>
+      <form action="/create-contact" method="post">
+        <label class="label-field" for="name">Name</label><br />
+        <input
+          class="input-field"
+          type="text"
+          name="name"
+          placeholder="Enter Name"
+          required
+        /><br />
+        <label class="label-field" for="phone">Contact</label><br />
+        <input
+          class="input-field"
+          type="number"
+          name="phone"
+          placeholder="Enter Contact"
+          required
+        /><br />
+        <label class="label-field" for="email">Email</label><br />
+        <input
+          class="input-field"
+          type="email"
+          name="email"
+          placeholder="Eg. example@email.com"
+          required
+        /><br />
+        <div class="button-div">
+          <button type="submit" class="submit-button">Add Contact</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

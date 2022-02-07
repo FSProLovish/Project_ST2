@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost//contactlist");
+mongoose.connect("mongodb://localhost/contactlist");
 const db = mongoose.connection;
 
 db.on("error", console.error.bind(console, "Error connecting to MongoDb"));
