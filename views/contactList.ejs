@@ -16,11 +16,11 @@
     </h1>
     <table>
       <tr>
-        <th>Name</th>
-        <th>Contact</th>
-        <th>Email</th>
-        <th>Delete</th>
-        <th>Update</th>
+        <th><i class="fas fa-user"></i>Name</th>
+        <th><i class="fas fa-id-badge"></i>Contact</th>
+        <th><i class="fas fa-envelope"></i>Email</th>
+        <th><i class="fas fa-trash-alt"></i>Delete</th>
+        <th><i class="fas fa-pen"></i>Update</th>
       </tr>
       <% for(let i of contact_list) {%>
       <tr>
@@ -39,6 +39,8 @@
       </tr>
       <%}%>
     </table>
-    <div></div>
+    <div class="contact">
+      <a href="/add-contact" class="create-contact">Add Contact</a>
+    </div>
   </body>
 </html>

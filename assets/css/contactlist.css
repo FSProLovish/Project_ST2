@@ -19,3 +19,20 @@ th {
 tr:nth-child(even) {
   background-color: #d6eeee;
 }
+
+th i {
+  margin-right: 5px;
+}
+
+.contact {
+  text-align: center;
+  margin: 50px;
+}
+
+.create-contact {
+  background-color: black;
+  color: white;
+  border-radius: 15px;
+  text-decoration: none;
+  padding: 10px;
+}
