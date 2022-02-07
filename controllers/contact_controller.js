@@ -16,20 +16,30 @@ module.exports.list = function (req, res) {
 
 // To Add more Contact's to the DataBase
 module.exports.create = function (req, res) {
-  Contact.create(
-    {
-      name: req.body.name,
-      phone: req.body.phone,
-      email: req.body.email,
-    },
-    function (err, newContact) {
-      if (err) {
-        console.log("Error in creating a contact");
-        return;
-      }
-      res.redirect("/contact-list");
+  Contact.findOne({ email: req.body.email }, function (err, contact) {
+    if (err) {
+      console.log("error in finding the contact");
+      return;
     }
-  );
+    if (!contact) {
+      Contact.create(
+        {
+          name: req.body.name,
+          phone: req.body.phone,
+          email: req.body.email,
+        },
+        function (err, newContact) {
+          if (err) {
+            console.log("Error in creating a contact");
+            return;
+          }
+          res.redirect("/contact-list");
+        }
+      );
+    } else {
+      return res.redirect("back");
+    }
+  });
 };
 
 // To Delete Contact from DataBase
